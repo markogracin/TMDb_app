@@ -1,0 +1,14 @@
+@import 'vars';
+
+@import "~bootstrap/scss/bootstrap";
+
+@import '~@fortawesome/fontawesome-pro/scss/brands';
+@import '~@fortawesome/fontawesome-pro/scss/regular';
+@import '~@fortawesome/fontawesome-pro/scss/solid';
+@import '~@fortawesome/fontawesome-pro/scss/light';
+@import '~@fortawesome/fontawesome-pro/scss/fontawesome';
+
+@import 'mixins';
+@import 'base';
+@import 'layout';
+@import 'modules';
