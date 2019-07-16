@@ -1,5 +1,13 @@
 body {
+  background: $bg-color;
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  //padding: 16% 0 0;
+}
+
+main{
+  flex: 1 0 auto;
 }
 
 p {

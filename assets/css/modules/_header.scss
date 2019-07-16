@@ -1,0 +1,11 @@
+header.hero{
+  position: fixed;
+  top: 50px;
+  left: 2%;
+  h1{
+    font-size: 10vw;
+    font-family: $main-font;
+    color: rgba($main-color, .2);
+    text-transform: uppercase;
+  }
+}

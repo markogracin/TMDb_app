@@ -1,0 +1,16 @@
+.section-library{
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+  &--item{
+    background: $item-color;
+    min-height: 400px;
+    @include border-radius(4px);
+    @include box-shadow($le-shadow);
+    @include transition(.5s cubic-bezier(0.77, 0, 0.175, 1));
+    &:hover{
+      @include transform(translateY(-5px));
+      @include transition(.5s cubic-bezier(0.77, 0, 0.175, 1));
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.footer{
+
+  &--loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: $item-color;
+    height: 100%;
+    width: 100%;
+    transform-origin: 100%;
+    @include transform(scaleX(1));
+    @include transition($le-transition-long);
+    &-done{
+      @include transform(scaleX(0));
+      @include transition($le-transition-long);
+    }
+    h2{
+      font-family: $main-font;
+      font-size: 36px;
+    }
+  }
+}
