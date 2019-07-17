@@ -1,15 +1,18 @@
 <template>
     <main>
-        <Hero/>
         <router-view/>
     </main>
 </template>
 
 <script>
-    import Hero from "./components/Hero";
+    import PopularMovies from './views/PopularMovies';
+    import MovieDetails from './views/MovieDetails';
 
     export default {
-        name: "App",
-        components: {Hero}
+        name: 'App',
+        views: {
+            'PopularMovies': PopularMovies,
+            'MovieDetails': MovieDetails,
+        }
     }
 </script>

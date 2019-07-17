@@ -10664,46 +10664,48 @@ p {
   margin: 0 auto;
 }
 
-header.hero {
-  position: fixed;
-  top: 50px;
-  left: 2%;
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
 }
 
-header.hero h1 {
+.section-head {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.section-head h1 {
   font-size: 10vw;
   font-family: "Oswald", sans-serif;
   color: rgba(255, 150, 134, 0.2);
+  margin: 0;
   text-transform: uppercase;
+  transform: translateY(100%);
+  transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.footer--loader {
-  position: fixed;
+.section-head:after {
+  content: "";
+  display: block;
+  background: #efecea;
+  position: absolute;
   top: 0;
+  right: 0;
   left: 0;
-  background: #D8C2B3;
-  height: 100%;
-  width: 100%;
-  transform-origin: 100%;
-  transform: scaleX(1);
+  bottom: 0;
+  transform: translateY(100%);
+}
+
+.section-head.show h1 {
+  transform: translateY(0);
   transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.footer--loader-done {
-  transform: scaleX(0);
-  transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-}
-
-.footer--loader h2 {
-  font-family: "Oswald", sans-serif;
-  font-size: 36px;
-}
-
-.section-library {
-  display: flex;
-  align-items: center;
-  min-height: 100%;
-  margin: 150px 0 0;
+.section-body {
+  margin: auto;
 }
 
 .section-library--item {
@@ -10744,7 +10746,7 @@ header.hero h1 {
 }
 
 .section-library--item---title {
-  background: rgba(0, 0, 0, 0.8);
+  background: black;
   padding: 10px;
   color: #fff;
   font-family: "Oswald", sans-serif;
@@ -10754,6 +10756,10 @@ header.hero h1 {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.section-library--item---title span.date {
+  font-family: "Raleway", sans-serif;
 }
 
 .section-library--item---rating {

@@ -1,14 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-// Components
-import PopularMovies from '../components/PopularMovies';
-import MovieDetails from '../components/MovieDetails';
+// Views
+import PopularMovies from '../views/PopularMovies';
+import MovieDetails from '../views/MovieDetails';
 
 Vue.use(VueRouter);
 
 export default new VueRouter({
-    mode: 'history',
+    //mode: 'history',
     routes: [
         {
             path: '/',
@@ -16,10 +16,10 @@ export default new VueRouter({
             component: PopularMovies,
         },
         {
-            path: 'detail/:id',
+            path: '/details/:id',
             name: 'MovieDetails',
-            props: true,
             component: MovieDetails,
+            props: true
         }
-    ]
-})
+    ],
+});
