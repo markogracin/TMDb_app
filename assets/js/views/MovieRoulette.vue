@@ -2,8 +2,7 @@
     <section class="section section-roulette">
 
         <div class="section-head container">
-            <h1 v-if="randomMovie">{{ randomMovie.title }}</h1>
-            <h1 v-else>MOVIE ROULETTE</h1>
+            <h1>MOVIE ROULETTE</h1>
         </div>
 
         <div class="section-body container">
@@ -108,11 +107,11 @@
                 await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=1&with_genres=${genre}`)
                     .then(response => (this.randomPage = Math.floor(Math.random() * (response.data.total_pages)) + 1))
                     .catch(error => {
-                        console.log(error)
+                        console.log(error);
                     });
 
-                if (this.totalPages > 1000) {
-                    this.totalPages = 1000;
+                if (page > 1000){
+                    page = 1000;
                 }
 
                 await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=${page}&with_genres=${genre}`)

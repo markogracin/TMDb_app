@@ -2542,7 +2542,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
 
 
 
@@ -2583,8 +2582,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
               case 5:
-                if (this.totalPages > 1000) {
-                  this.totalPages = 1000;
+                if (page > 1000) {
+                  page = 1000;
                 }
 
                 _context.next = 8;
@@ -4137,11 +4136,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", { staticClass: "section section-roulette" }, [
-    _c("div", { staticClass: "section-head container" }, [
-      _vm.randomMovie
-        ? _c("h1", [_vm._v(_vm._s(_vm.randomMovie.title))])
-        : _c("h1", [_vm._v("MOVIE ROULETTE")])
-    ]),
+    _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "section-body container" }, [
       _c("div", { staticClass: "row" }, [
@@ -4282,7 +4277,16 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "section-head container" }, [
+      _c("h1", [_vm._v("MOVIE ROULETTE")])
+    ])
+  }
+]
 render._withStripped = true
 
 
