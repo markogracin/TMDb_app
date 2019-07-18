@@ -3,11 +3,17 @@ body {
   position: relative;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   //padding: 16% 0 0;
 }
 
 main{
   flex: 1 0 auto;
+  &:after{
+    content: '';
+    height: 500px;
+
+  }
 }
 
 p {

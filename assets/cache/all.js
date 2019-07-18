@@ -170,19 +170,17 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************!*\
   !*** ./assets/js/main-animations.js ***!
   \**************************************/
-/*! exports provided: animations */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "animations", function() { return animations; });
+// On load animations
 function animations() {
   var head = document.querySelector('.section-head');
-  var body = document.querySelector('.section-body'); // Animate header if exists
+  var body = document.querySelector('.section-body');
 
   if (head) {
     setTimeout(function () {
-      document.querySelector('.section-head').classList.add('show');
+      head.classList.add('show');
     }, 500);
     window.addEventListener("scroll", function () {
       var scrollTOp = window.pageYOffset;
@@ -191,8 +189,25 @@ function animations() {
     });
   }
 
-  if (body) {}
+  if (body) {
+    setTimeout(function () {
+      body.classList.add('show');
+    }, 500);
+  }
+} // On movie click animations
+
+
+function pageTransitions() {
+  var head = document.querySelector('.section-head');
+  var body = document.querySelector('.section-body');
+  head.setAttribute('style', 'transform: translateY(-5px); opacity: 0; transition: .5s cubic-bezier(0.77, 0, 0.175, 1)');
+  body.setAttribute('style', 'transform: translateY(-5px); opacity: 0; transition: .5s cubic-bezier(0.77, 0, 0.175, 1)');
 }
+
+module.exports = {
+  animations: animations,
+  pageTransitions: pageTransitions
+};
 
 /***/ }),
 
@@ -236,8 +251,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _views_PopularMovies__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../views/PopularMovies */ "./assets/js/views/PopularMovies.vue");
 /* harmony import */ var _views_MovieDetails__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../views/MovieDetails */ "./assets/js/views/MovieDetails.vue");
+/* harmony import */ var _views_MovieRoulette__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../views/MovieRoulette */ "./assets/js/views/MovieRoulette.vue");
 
  // Views
+
 
 
 
@@ -252,6 +269,11 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     path: '/details/:id',
     name: 'MovieDetails',
     component: _views_MovieDetails__WEBPACK_IMPORTED_MODULE_3__["default"],
+    props: true
+  }, {
+    path: '/roulette',
+    name: 'MovieRoulette',
+    component: _views_MovieRoulette__WEBPACK_IMPORTED_MODULE_4__["default"],
     props: true
   }]
 }));
@@ -322,6 +344,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MovieDetails_vue_vue_type_template_id_0a3a041b___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MovieDetails_vue_vue_type_template_id_0a3a041b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./assets/js/views/MovieRoulette.vue":
+/*!*******************************************!*\
+  !*** ./assets/js/views/MovieRoulette.vue ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _MovieRoulette_vue_vue_type_template_id_4da1d92a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MovieRoulette.vue?vue&type=template&id=4da1d92a& */ "./assets/js/views/MovieRoulette.vue?vue&type=template&id=4da1d92a&");
+/* harmony import */ var _MovieRoulette_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MovieRoulette.vue?vue&type=script&lang=js& */ "./assets/js/views/MovieRoulette.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _MovieRoulette_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _MovieRoulette_vue_vue_type_template_id_4da1d92a___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _MovieRoulette_vue_vue_type_template_id_4da1d92a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "assets/js/views/MovieRoulette.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./assets/js/views/MovieRoulette.vue?vue&type=script&lang=js&":
+/*!********************************************************************!*\
+  !*** ./assets/js/views/MovieRoulette.vue?vue&type=script&lang=js& ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MovieRoulette_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./MovieRoulette.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./assets/js/views/MovieRoulette.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MovieRoulette_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./assets/js/views/MovieRoulette.vue?vue&type=template&id=4da1d92a&":
+/*!**************************************************************************!*\
+  !*** ./assets/js/views/MovieRoulette.vue?vue&type=template&id=4da1d92a& ***!
+  \**************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MovieRoulette_vue_vue_type_template_id_4da1d92a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./MovieRoulette.vue?vue&type=template&id=4da1d92a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./assets/js/views/MovieRoulette.vue?vue&type=template&id=4da1d92a&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MovieRoulette_vue_vue_type_template_id_4da1d92a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MovieRoulette_vue_vue_type_template_id_4da1d92a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -2172,19 +2263,22 @@ module.exports = function isBuffer (obj) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_PopularMovies__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./views/PopularMovies */ "./assets/js/views/PopularMovies.vue");
 /* harmony import */ var _views_MovieDetails__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./views/MovieDetails */ "./assets/js/views/MovieDetails.vue");
+/* harmony import */ var _views_MovieRoulette__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./views/MovieRoulette */ "./assets/js/views/MovieRoulette.vue");
 //
 //
 //
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'App',
   views: {
     'PopularMovies': _views_PopularMovies__WEBPACK_IMPORTED_MODULE_0__["default"],
-    'MovieDetails': _views_MovieDetails__WEBPACK_IMPORTED_MODULE_1__["default"]
+    'MovieDetails': _views_MovieDetails__WEBPACK_IMPORTED_MODULE_1__["default"],
+    'MovieRoulette': _views_MovieRoulette__WEBPACK_IMPORTED_MODULE_2__["default"]
   }
 });
 
@@ -2200,6 +2294,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../main-animations */ "./assets/js/main-animations.js");
+/* harmony import */ var _main_animations__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_main_animations__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 //
@@ -2217,31 +2312,219 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'MovieDetail',
-  props: ['id'],
+  props: ['id', 'genre'],
   data: function data() {
     return {
       movieDetails: []
     };
   },
+  created: function created() {
+    window.scrollTo(0, 0);
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    var apiKey = '8cb855b17cb0738ba58fc59872e6f7cb';
+    var movieId = this.id; // Get details
+
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://api.themoviedb.org/3/movie/".concat(movieId, "?api_key=").concat(apiKey)).then(function (response) {
+      return _this.movieDetails = response.data;
+    })["catch"](function (error) {
+      console.log(error);
+    }); // Load animations
+
+    Object(_main_animations__WEBPACK_IMPORTED_MODULE_0__["animations"])();
+  },
   methods: {
-    showMovieDetails: function showMovieDetails() {
+    goHome: function goHome() {
+      var _this2 = this;
+
+      setTimeout(function () {
+        return _this2.$router.push('/');
+      }, 500);
+      Object(_main_animations__WEBPACK_IMPORTED_MODULE_0__["pageTransitions"])();
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./assets/js/views/MovieRoulette.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./assets/js/views/MovieRoulette.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _main_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../main-animations */ "./assets/js/main-animations.js");
+/* harmony import */ var _main_animations__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_main_animations__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'MovieRoulette',
+  data: function data() {
+    return {
+      genres: [],
+      radioSelected: '',
+      getTotalPages: '',
+      getRandomPage: '',
+      getFinalOutput: ''
+    };
+  },
+  methods: {
+    // Get selected genre MAX page number
+    rollGenre: function rollGenre() {
       var _this = this;
 
       var apiKey = '8cb855b17cb0738ba58fc59872e6f7cb';
-      var movieId = this.id;
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://api.themoviedb.org/3/movie/".concat(movieId, "?api_key=").concat(apiKey)).then(function (response) {
-        return _this.movieDetails = response.data;
+      var genre = this.radioSelected; // Get max page number
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://api.themoviedb.org/3/discover/movie?api_key=".concat(apiKey, "&page=1&with_genres=").concat(genre)).then(function (response) {
+        return _this.getTotalPages = response.data.total_pages;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    rollFinal: function rollFinal() {
+      var _this2 = this;
+
+      var apiKey = '8cb855b17cb0738ba58fc59872e6f7cb';
+      var genre = this.radioSelected;
+      var page = this.getTotalPages; // Get max page number
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://api.themoviedb.org/3/discover/movie?api_key=".concat(apiKey, "&page=").concat(page, "&with_genres=").concat(genre)).then(function (response) {
+        return _this2.getFinalOutput = response.data;
       })["catch"](function (error) {
         console.log(error);
       });
     }
   },
   mounted: function mounted() {
-    this.showMovieDetails();
+    var _this3 = this;
+
+    // Get genre list
+    var apiKey = '8cb855b17cb0738ba58fc59872e6f7cb';
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://api.themoviedb.org/3/genre/movie/list?api_key=".concat(apiKey)).then(function (response) {
+      var _this3$genres;
+
+      return (_this3$genres = _this3.genres).push.apply(_this3$genres, _toConsumableArray(response.data.genres));
+    })["catch"](function (error) {
+      console.log(error);
+    });
     Object(_main_animations__WEBPACK_IMPORTED_MODULE_0__["animations"])();
   }
 });
@@ -2258,8 +2541,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../main-animations */ "./assets/js/main-animations.js");
+/* harmony import */ var _main_animations__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_main_animations__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 //
 //
 //
@@ -2290,29 +2582,53 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'PopularMovies',
   data: function data() {
     return {
-      PopularMovies: []
+      PopularMovies: [],
+      page: 1
     };
   },
   methods: {
-    getMovies: function getMovies() {
+    getDetails: function getDetails(id) {
       var _this = this;
 
+      setTimeout(function () {
+        return _this.$router.push('/details/' + id);
+      }, 500);
+      Object(_main_animations__WEBPACK_IMPORTED_MODULE_0__["pageTransitions"])();
+    },
+    loadMore: function loadMore() {
+      this.page++;
+      this.getMovies();
+    },
+    getMovies: function getMovies() {
+      var _this2 = this;
+
       var apiKey = '8cb855b17cb0738ba58fc59872e6f7cb';
-      var page = 1;
+      var page = this.page;
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://api.themoviedb.org/3/movie/popular?api_key=".concat(apiKey, "&page=").concat(page)).then(function (response) {
-        return _this.PopularMovies = response.data.results;
+        var _this2$PopularMovies;
+
+        return (_this2$PopularMovies = _this2.PopularMovies).push.apply(_this2$PopularMovies, _toConsumableArray(response.data.results));
       })["catch"](function (error) {
         console.log(error);
       });
-    },
-    getDetails: function getDetails(id) {
-      this.$router.push('/details/' + id);
     }
   },
   mounted: function mounted() {
@@ -2837,14 +3153,232 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "section-body container" }, [
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-6 text-danger" }, [
-          _vm._v(_vm._s(_vm.movieDetails.title))
+        _c("div", { staticClass: "col-lg-4" }, [
+          _c(
+            "a",
+            {
+              staticClass: "section-details--back btn",
+              on: {
+                click: function($event) {
+                  return _vm.goHome()
+                }
+              }
+            },
+            [
+              _c("span", [_vm._v("back")]),
+              _vm._v(" "),
+              _c("span", [_vm._v("<3")])
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "section-details--img" }, [
+            _c("img", {
+              attrs: {
+                src:
+                  "http://image.tmdb.org/t/p/w500" +
+                  _vm.movieDetails.poster_path
+              }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-8" }, [
+          _c("table", [
+            _c("tr", [
+              _c("td", [_vm._v("Title:")]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(_vm.movieDetails.title))])
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("Rating:")]),
+              _vm._v(" "),
+              _c("td", [
+                _c("span", [_vm._v(_vm._s(_vm.movieDetails.vote_average))])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("Release date:")]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(_vm.movieDetails.release_date))])
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("Genres:")]),
+              _vm._v(" "),
+              _c(
+                "td",
+                _vm._l(_vm.movieDetails.genres, function(genre) {
+                  return _c("span", { staticClass: "list" }, [
+                    _vm._v(_vm._s(genre.name))
+                  ])
+                }),
+                0
+              )
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("Language:")]),
+              _vm._v(" "),
+              _c("td", { staticClass: "text-uppercase" }, [
+                _vm._v(_vm._s(_vm.movieDetails.original_language))
+              ])
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("Popularity:")]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(_vm.movieDetails.popularity))])
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("Production companies:")]),
+              _vm._v(" "),
+              _c(
+                "td",
+                _vm._l(_vm.movieDetails.production_companies, function(
+                  company
+                ) {
+                  return _c("span", { staticClass: "list" }, [
+                    _vm._v(_vm._s(company.name))
+                  ])
+                }),
+                0
+              )
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("Overview:")]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(_vm.movieDetails.overview))])
+            ])
+          ])
         ])
       ])
     ])
   ])
 }
 var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./assets/js/views/MovieRoulette.vue?vue&type=template&id=4da1d92a&":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./assets/js/views/MovieRoulette.vue?vue&type=template&id=4da1d92a& ***!
+  \********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("section", { staticClass: "section section-roulette" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "section-body container" }, [
+      _c(
+        "a",
+        {
+          staticClass: "section-roulette--back",
+          on: {
+            click: function($event) {
+              return _vm.goHome()
+            }
+          }
+        },
+        [_c("span", [_vm._v("back")]), _vm._v(" "), _c("span", [_vm._v("<3")])]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "section-roulette--categories" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-6" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "section-roulette--categories---items d-flex flex-wrap"
+              },
+              _vm._l(_vm.genres, function(genre) {
+                return _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.radioSelected,
+                        expression: "radioSelected"
+                      }
+                    ],
+                    attrs: { type: "radio", id: genre.name },
+                    domProps: {
+                      value: genre.id,
+                      checked: _vm._q(_vm.radioSelected, genre.id)
+                    },
+                    on: {
+                      click: _vm.rollGenre,
+                      change: function($event) {
+                        _vm.radioSelected = genre.id
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: genre.name } }, [
+                    _vm._v(_vm._s(genre.name))
+                  ])
+                ])
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _vm.radioSelected
+              ? _c("div", [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "section-roulette--categories---button btn",
+                      on: { click: _vm.rollFinal }
+                    },
+                    [
+                      _c("span", [_vm._v("roll the dice")]),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("popcorn ready?")])
+                    ]
+                  )
+                ])
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-6" }, [
+            _vm._v(
+              "\n                    " +
+                _vm._s(_vm.getTotalPages) +
+                "\n                "
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "section-head container" }, [
+      _c("h1", [_vm._v("ROULETTE")])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -2877,7 +3411,10 @@ var render = function() {
             _vm._l(_vm.PopularMovies, function(movie, index) {
               return _c(
                 "div",
-                { key: index, staticClass: "col-lg-3 col-md-4 col-sm-6" },
+                {
+                  key: index,
+                  staticClass: "col-lg-3 col-md-4 col-sm-6 col-12"
+                },
                 [
                   _c(
                     "a",
@@ -2942,7 +3479,24 @@ var render = function() {
             }),
             0
           )
-        : _vm._e()
+        : _vm._e(),
+      _vm._v(" "),
+      _c("div", { staticClass: "text-center" }, [
+        _c(
+          "button",
+          {
+            staticClass: "section-library--loadmore btn",
+            on: { click: _vm.loadMore }
+          },
+          [
+            _c("span", [_vm._v("show more")]),
+            _vm._v(" "),
+            _c("span", [_vm._v("movies <3")])
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "section-library--rulette" })
     ])
   ])
 }

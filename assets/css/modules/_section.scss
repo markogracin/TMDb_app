@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   min-height: 100%;
+  overflow: hidden;
   &-head{
     margin-top: 50px;
     margin-bottom: 50px;
@@ -10,7 +11,7 @@
     h1{
       font-size: 10vw;
       font-family: $main-font;
-      color: rgba($main-color, .2);
+      color: rgba($main-color, 1);
       margin: 0;
       text-transform: uppercase;
       @include transform(translateY(100%));
@@ -34,6 +35,13 @@
   }
 
   &-body{
-    margin: auto;
+    margin: 0 auto 90px;
+    opacity: 0;
+    @include transform(translateY(10px));
+    &.show{
+      opacity: 1;
+      @include transform(translateY(0));
+      @include transition(.5s);
+    }
   }
 }
