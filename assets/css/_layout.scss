@@ -1,4 +1,25 @@
-.container-fluid{
+.container-fluid {
   max-width: 1220px;
   margin: 0 auto;
+}
+
+table {
+  tr {
+    vertical-align: baseline;
+    td {
+      padding: 0 20px 12px 0;
+      &:first-child {
+        font-weight: 500;
+        white-space: nowrap;
+      }
+      span {
+        &.list:after {
+          content: ', ';
+        }
+        &.list:last-child:after {
+          content: '.';
+        }
+      }
+    }
+  }
 }

@@ -2,6 +2,9 @@
 function animations() {
     let head = document.querySelector('.section-head');
     let body = document.querySelector('.section-body');
+    let home = document.querySelector('.home');
+    let roulette = document.querySelector('.getRoulette');
+    let loadMore = document.querySelector('.loadMore');
 
     if (head) {
         setTimeout(function () {
@@ -9,9 +12,9 @@ function animations() {
         }, 500);
 
         window.addEventListener("scroll", function () {
-            let scrollTOp = window.pageYOffset;
-            head.style.transform = 'translateY(' + scrollTOp * 0.5 + 'px' + ')';
-            head.style.opacity = 1 - scrollTOp / 300;
+            let scrollTop = window.pageYOffset;
+            head.style.transform = 'translateY(' + scrollTop * 0.5 + 'px' + ')';
+            head.style.opacity = 1 - scrollTop / 300;
         })
     }
 
@@ -20,6 +23,21 @@ function animations() {
             body.classList.add('show');
         }, 500);
     }
+
+    if (home) {
+        window.addEventListener("scroll", function () {
+            let scrollTop = window.pageYOffset;
+            if (scrollTop > 500) {
+                roulette.classList.add('show');
+                loadMore.classList.add('show');
+            } else {
+                roulette.classList.remove('show');
+                loadMore.classList.remove('show');
+            }
+        })
+    }
+
+
 }
 
 // On movie click animations
