@@ -2,7 +2,7 @@
     <section class="section section-library home">
 
         <div class="section-head container">
-            <h1>COBETEQUE</h1>
+            <h1>TMDB Videoteque</h1>
         </div>
 
         <div class="section-body container">
