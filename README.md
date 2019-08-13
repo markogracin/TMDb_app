@@ -3,4 +3,4 @@ TMDb app
 
 npm install
 
-http://cobe.markogracin.com
+http://tmdb.markogracin.com
